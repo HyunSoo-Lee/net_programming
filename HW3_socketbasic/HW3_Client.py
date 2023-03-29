@@ -9,7 +9,7 @@ msg = sock.recv(1024)
 print(msg.decode())
 
 #학생 이름 전송
-sock.send(b'LeeHyunSoo')
+sock.send(b'HyunSoo Lee')
 
 #학번 수신
 StuId = sock.recv(1024)
