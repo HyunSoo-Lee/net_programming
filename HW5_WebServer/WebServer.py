@@ -2,18 +2,15 @@ from socket import *
 import os
 
 def parsing(req):
-    #req = "GET /index.html HTTP/1.1"
-    filename = req[0].split(' ')[1]
-    filename = filename[1:]
+    # req = "GET /index.html HTTP/1.1"
+    filename = req[0].split(' ')[1][1:]
     return filename
 
 def open_file(filename, mimeType, c, f):
     if os.path.isfile(filename):
-        # 파일이 있을때
         # HTTP header 
         c.send(b'HTTP/1.1 200 OK\r\n')
-        contype_str = 'Content-Type: ' + mimeType + '\r\n'
-        c.send(contype_str.encode())
+        c.send(('Content-Type: ' + mimeType + '\r\n').encode())
         c.send(b'\r\n')
 
         # HTTP body 
@@ -23,7 +20,6 @@ def open_file(filename, mimeType, c, f):
         else:
             c.send(data)
     else:
-        # 파일이 없을때
         c.send(b'HTTP/1.1 404 Not Found\r\n')
         c.send(b'\r\n')
         c.send(b'<HTML><HEAD><TITLE>Not Found</TITLE></HEAD>')
