@@ -1,0 +1,10 @@
+Tue Apr 11 23:04:34 2023: Temp=19, Humid=96, Iilum=83
+Tue Apr 11 23:04:38 2023: Heartbeat=116, Steps=2489, Cal=2560
+Tue Apr 11 23:04:42 2023: Temp=11, Humid=25, Iilum=103
+Tue Apr 11 23:04:45 2023: Heartbeat=93, Steps=3467, Cal=2145
+Tue Apr 11 23:04:48 2023: Temp=16, Humid=3, Iilum=126
+Tue Apr 11 23:04:51 2023: Heartbeat=105, Steps=5115, Cal=3141
+Tue Apr 11 23:04:57 2023: Temp=35, Humid=98, Iilum=115
+Tue Apr 11 23:05:01 2023: Heartbeat=119, Steps=5930, Cal=3171
+Tue Apr 11 23:05:10 2023: Temp=39, Humid=92, Iilum=98
+Tue Apr 11 23:05:14 2023: Heartbeat=99, Steps=3431, Cal=1691

@@ -4,7 +4,7 @@ import time
 
 BUF_SIZE = 1024
 LENGTH = 4  # '파일 크기': 4바이트
-f = open('output.txt','w')
+f = open('data.txt','w')
 
 s = socket(AF_INET, SOCK_STREAM)
 while True : 
@@ -22,6 +22,7 @@ while True :
         s.connect(('localhost', 9000))
         s.send(b'quit') # 'Bye' 메시지 전송
         s.close()
+        break
     else:
         print('You write wrong device number')
         s.close()
@@ -53,7 +54,7 @@ while True :
         illum = s.recv(1024)
         illum = int.from_bytes(illum, 'big')
         print(f'{nowtime}: Temp={temp}, Humid={humi}, Iilum={illum}')
-        f.write(f'{nowtime}: Temp={temp}, Humid={humi}, Iilum={illum}')
+        f.write(f'{nowtime}: Temp={temp}, Humid={humi}, Iilum={illum}\n')
     elif port == '2':
         heartrate = s.recv(1024)
         heartrate = int.from_bytes(heartrate, 'big')
@@ -62,6 +63,6 @@ while True :
         cal = s.recv(1024)
         cal = int.from_bytes(cal, 'big')
         print(f'{nowtime}: Heartbeat={heartrate}, Steps={step}, Cal={cal}')
-        f.write(f'{nowtime}: Heartbeat={heartrate}, Steps={step}, Cal={cal}')
+        f.write(f'{nowtime}: Heartbeat={heartrate}, Steps={step}, Cal={cal}\n')
     s.close()
     s = socket(AF_INET, SOCK_STREAM)
