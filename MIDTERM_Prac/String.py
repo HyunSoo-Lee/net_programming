@@ -60,4 +60,16 @@ def Calculator(complex1, complex2):
 complex_1 = MyComplex(3, -4)
 complex_2 = MyComplex(-5,2)
 print(Calculator(complex_1, complex_2))
+print('\n\n')
 
+import struct
+
+
+data = 1234
+print(data)
+data = struct.pack('i', data)
+print(data)
+data = struct.unpack('i', data)
+print(data)
+print(type(data))
+print(data[0])
