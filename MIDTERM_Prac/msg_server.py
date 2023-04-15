@@ -14,12 +14,14 @@ sock.bind((HOST, PORT))
 while True:
     # 클라이언트로부터 메시지 수신
     data, addr = sock.recvfrom(1024)
-    message = data.decode().split()
-
+    if not data:
+            break
+        
     # 메시지 분리
+    message = data.decode().split()
     command = message[0].lower()
-    mboxID = message[1]
     if len(message) > 2:
+        mboxID = message[1]
         msg = ' '.join(message[2:])
     else:
         msg = ''
@@ -37,7 +39,5 @@ while True:
         else:
             sock.sendto('No messages'.encode(), addr)
     elif command == 'quit':
+        sock.close()
         break
-
-# UDP 소켓 종료
-sock.close()
