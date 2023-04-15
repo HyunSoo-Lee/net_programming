@@ -18,7 +18,7 @@ while True:
 
     # 메시지 분리
     command = message[0].lower()
-    mbox_id = message[1]
+    mboxID = message[1]
     if len(message) > 2:
         msg = ' '.join(message[2:])
     else:
@@ -26,14 +26,14 @@ while True:
 
     # 메시지 처리
     if command == 'send':
-        if mbox_id not in mailbox:
-            mailbox[mbox_id] = []
-        mailbox[mbox_id].append(msg)
+        if mboxID not in mailbox:
+            mailbox[mboxID] = []
+        mailbox[mboxID].append(msg)
         sock.sendto('OK'.encode(), addr)
     elif command == 'receive':
-        if mbox_id in mailbox and len(mailbox[mbox_id]) > 0:
-            sock.sendto(mailbox[mbox_id][0].encode(), addr)
-            mailbox[mbox_id].pop(0)
+        if mboxID in mailbox and len(mailbox[mboxID]) > 0:
+            sock.sendto(mailbox[mboxID][0].encode(), addr)
+            del mailbox[mboxID][0]
         else:
             sock.sendto('No messages'.encode(), addr)
     elif command == 'quit':
