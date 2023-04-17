@@ -73,3 +73,8 @@ data = struct.unpack('i', data)
 print(data)
 print(type(data))
 print(data[0])
+
+print('0xffff')
+x = 0xFFFF
+print(type(x))
+print(x)

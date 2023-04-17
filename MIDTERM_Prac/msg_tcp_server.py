@@ -56,8 +56,8 @@ while True:
                 conn.sendall('No messages'.encode())
         elif command == 'quit':
             conn.close()
-            sock.close()
-            sock_switch = True
+            # sock.close()
+            # sock_switch = True
             break
     if sock_switch ==  True:
         break

@@ -12,7 +12,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((HOST, PORT))
 
 while True:
-    # 클라이언트로부터 메시지 수신
     data, addr = sock.recvfrom(1024)
     if not data:
             break

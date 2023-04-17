@@ -1,10 +1,10 @@
 import socket
 
-# 서버의 IP 주소와 포트 번호
+# 서버의 IP, PORT
 HOST = 'localhost'
 PORT = 9000
 
-# 서버와 통신하기 위한 소켓 객체 생성
+# 소켓 생성
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 while True:
