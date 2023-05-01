@@ -18,7 +18,7 @@ def client_thread(conn, addr):
     if (conn, addr) not in clients:
         print('new client', addr)
         clients.append((conn, addr))
-        print(clients)
+        #print(clients)
 
     while True:
         data = conn.recv(1024)
