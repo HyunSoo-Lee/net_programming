@@ -14,7 +14,6 @@ while True:
     rel_c, addr = rel_s.accept()
     data = rel_c.recv(1024)
     msg = data.decode()
-    print(msg)
 
     # 요청 라인과 host 헤더 추출
     reg = msg.split('\r\n')[0]
@@ -24,8 +23,7 @@ while True:
     # 외부 서버로 HTTP 요청 메시지 전송
     ext_s = socket(AF_INET, SOCK_STREAM)
     ext_s.connect(('www.daum.net', 80))
-    ext_s.send(reg.encode() +b'\r\n'+ hostmeg.encode() +b'\r\n')
-    print(reg.encode() +b'\r\n'+ hostmeg.encode() +b'\r\n')
+    ext_s.send(reg.encode() +b'\r\n'+ hostmeg.encode() +b'\r\n\r\n')
 
     # 외부 서버로부터 HTTP 응답 메시지 수진 및 릴레이 -> 브라우저
     web_data = ext_s.recv(1024)
