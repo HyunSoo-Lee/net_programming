@@ -15,10 +15,6 @@ print('Device1 server is running...')
 while True:
     # [select] if 통해 새로운 연결 처리
     conn, addr = sock.accept()
-    # if s == sock:
-    #         conn, addr = sock.accept()
-    #         socket_list.append(conn)
-    #         print('New client connected:', addr)
 
     # else
     # [select] else 통해서 데이터 수신 및 처리
@@ -33,7 +29,6 @@ while True:
 
     temp = 0
     humi = 0
-    illum = 0
     result = ''
 
     if num == 1:
