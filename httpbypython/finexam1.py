@@ -10,4 +10,3 @@ class http_handler(BaseHTTPRequestHandler):
 httpd = HTTPServer(('localhost', 8080), http_handler) 
 print('Serving HTTP on {}:{}'.format('localhost', 8080)) 
 httpd.serve_forever()
-            

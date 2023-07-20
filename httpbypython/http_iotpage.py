@@ -16,7 +16,7 @@ class http_handler(BaseHTTPRequestHandler):
         self.end_headers()
         with open('index.html', 'r', encoding='utf-8') as f:
             msg = f.read()
-            self.wfile.write(msg.encode())
+            self.wfile.write(msg.encode('euc-kr'))
 
     def send_image(self):
         self.send_response(200) 
